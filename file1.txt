@@ -24,3 +24,8 @@ public class UserModel {
         return username[i];
     }
 }
+
+
+nama	: kahar musakkar
+nim	: 60200116096
+kelas	: C
