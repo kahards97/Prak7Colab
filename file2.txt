@@ -1,0 +1,73 @@
+package mid_pbo;
+
+import java.util.Scanner;
+import java.util.regex.*;
+
+public class Mid_PBO extends UserModel {
+
+    public static void main(String[] args) {
+        UserModel userModel = new UserModel();
+        String polaEmailAdmin = userModel.getUsername(0);
+        String polaEmailUser = userModel.getUsername(1);
+        String polaPasswordAdmin = userModel.getPass(0);
+        String polaPasswordUser = userModel.getPass(1);
+        String Email;
+        String ulangLogin;
+        String Password;
+        String nimAdmin;
+        boolean admin = false;
+        boolean nimNotNull = false;
+        boolean user = false;
+        
+        System.out.println(polaEmailAdmin);
+        Scanner scan = new Scanner(System.in);
+        
+        try {
+            do {
+                System.out.print("Username = ");
+                Email = scan.nextLine();
+                System.out.print("Password = ");
+                Password = scan.nextLine();
+
+                for (int a=0; a<=9; a++){
+                    if (Email.matches(polaEmailAdmin) && Password.matches(polaPasswordAdmin)){
+                        admin = true;
+                        break;
+                    } else if (Email.matches(polaEmailUser) && Password.matches(polaPasswordUser)) {
+                        user = true;
+                        break;
+                    }
+                }
+                if (admin){
+                    System.out.print("Nim = ");
+                    nimAdmin = scan.nextLine();
+
+                    userModel.setNim(nimAdmin);
+                    nimNotNull= true;
+                    admin = false;
+                }
+
+                if (user) {
+                    if (nimNotNull){
+                        System.out.println("Banyak Digit = " + userModel.getNim().length());
+                        System.out.print("Nim yang ganji =");
+                        for (int a=0; a<=userModel.getNim().length(); a++){
+                            if (userModel.getNim().charAt(a) % 2 ==1){
+                                System.out.print(userModel.getNim().charAt(a) + " ");
+                            }
+                        }
+                        user= false;
+                        ulangLogin = "ya";
+                    }
+                }
+                
+                System.out.print("Login Kembali = ");
+                ulangLogin = scan.nextLine();
+                
+            } while (ulangLogin.equalsIgnoreCase("ya"));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+}//file Pertama
