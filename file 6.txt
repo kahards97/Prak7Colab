@@ -1,0 +1,8 @@
+<!php>
+	$a; ="Hello word";
+	echo "$a";
+
+	Nama : "Nurul Khumaedi "
+	Nim  :  " 60200116109 "
+	Kelas :  "C"
+?>
