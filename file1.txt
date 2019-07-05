@@ -1,0 +1,26 @@
+package mid_pbo;
+
+public class UserModel {
+    
+    private String nim=null;
+    private String pass[] = {"Sayamid33","Sayafinal33"};
+    private String username[] = {"Riswan@gmail.com","Kurni@ajah.com"};
+
+    public UserModel() {
+    }
+
+    public void setNim(String nim) {
+        this.nim = nim;
+    } 
+    public String getNim() {
+        return nim;
+    }
+
+    public String getPass(int i) {
+        return pass[i];
+    }
+
+    public String getUsername(int i) {
+        return username[i];
+    }
+}
